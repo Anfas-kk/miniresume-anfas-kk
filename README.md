@@ -1,12 +1,20 @@
 # Mini Resume Collector API
 
+<<<<<<< HEAD
 A REST API built using FastAPI that allows uploading resumes and managing candidate metadata.
+=======
+A REST API built using FastAPI to upload resumes, store candidate metadata, categorize candidates by experience level, and search/filter candidates.
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 
 ---
 
 ## Python Version
 
+<<<<<<< HEAD
 Python 3.10
+=======
+Python 3.10+
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 
 ---
 
@@ -16,6 +24,7 @@ Python 3.10
 
    git clone https://github.com/your-username/miniresume-anfas-kk.git
 
+<<<<<<< HEAD
 2. Navigate into the project folder:
 
    cd miniresume-anfas-kk
@@ -25,6 +34,17 @@ Python 3.10
    python -m venv venv
 
 4. Activate the virtual environment:
+=======
+2. Navigate into the project directory:
+
+   cd miniresume-anfas-kk
+
+3. Create virtual environment:
+
+   python -m venv venv
+
+4. Activate virtual environment:
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 
    Windows:
    venv\Scripts\activate
@@ -42,7 +62,11 @@ Python 3.10
 
 uvicorn main:app --reload
 
+<<<<<<< HEAD
 Server will run at:
+=======
+Server runs at:
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 
 http://127.0.0.1:8000
 
@@ -73,20 +97,33 @@ POST /candidates
 Form Data Required:
 
 - full_name
+<<<<<<< HEAD
+=======
+- email
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 - dob (YYYY-MM-DD)
 - contact_number
 - contact_address
 - education_qualification
 - graduation_year
 - experience_years
+<<<<<<< HEAD
 - skill_set (comma separated)
 - resume_file (PDF/DOC/DOCX)
 
 Response:
+=======
+- skill_set (comma separated values)
+- resume_file (PDF/DOC/DOCX)
+
+Response Example:
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 
 {
   "id": "uuid",
   "full_name": "Anfas KK",
+<<<<<<< HEAD
+=======validation, file size checks, categorization, and updated README)
   ...
 }
 
@@ -101,10 +138,19 @@ Optional Filters:
 - skill
 - experience
 - graduation_year
+<<<<<<< HEAD
 
 Example:
 
 GET /candidates?skill=Python&experience=2
+=======
+- limit (default 10)
+- offset (default 0)
+
+Example:
+
+GET /candidates?skill=Python&experience=3
+>>>>>>> 4dc6df5 (Enhanced API with email validation, file size checks, categorization, and updated README)
 
 ---
 
