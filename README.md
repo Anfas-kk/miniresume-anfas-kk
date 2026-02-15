@@ -1,0 +1,1 @@
+# miniresume-anfas-kk
