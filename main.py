@@ -4,6 +4,9 @@ from pydantic import BaseModel, EmailStr
 from typing import List, Optional
 from uuid import uuid4
 from datetime import date, datetime
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
+
 import os
 # import shutil
 
@@ -12,6 +15,8 @@ app = FastAPI(
     description="API to upload and manage candidate resumes",
     version="2.0.0"
 )
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # In-memory storage
 candidates = []
@@ -45,6 +50,12 @@ def categorize_candidate(experience: int) -> str:
         return "Mid"
     else:
         return "Junior"
+
+# Home Route
+@app.get("/", response_class=HTMLResponse)
+def home():
+    with open("static/index.html", "r") as file:
+        return file.read()
 
 # Health Check
 @app.get("/health")
